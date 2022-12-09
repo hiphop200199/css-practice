@@ -1,0 +1,26 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.tit{
+    color: orange;
+}
+p{
+    opacity: 0.5;
+}
+@mixin triangle($size,$side,$left:0,$top:0,$color:orange) {
+    position: relative;
+    &::after{
+        position: absolute;
+        content: "";
+        left: $left;
+        top: $top;
+        border:$size solid transparent;
+        border-#{$side}-color: $color;
+
+    }
+}
+.imp{
+   @include triangle(1em,left,-1.5em ,0 ,red );
+}

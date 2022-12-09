@@ -1,0 +1,32 @@
+* {
+    color: aliceblue;
+    font-family: "Freestyle Script";
+}
+
+.trans-bg {
+    /*重點是在本元素設變數，然後在pseudo元素設定背景*/
+    --bg-image: url(./aurora-1197753_1920.jpg);
+    --bg-opacity: 0.25;
+
+    display: grid;
+    place-content: center;
+    /*東西擺在中間*/
+    text-align: center;
+    min-height: 500px;
+    position: relative;
+    isolation: isolate;
+    /*讓這個元素一定要產生堆疊情境(上下層)*/
+}
+
+.trans-bg::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    /*inset是top bottom left right的縮寫*/
+    background-color: rgb(135, 50, 64);
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    opacity: var(--bg-opacity);
+}

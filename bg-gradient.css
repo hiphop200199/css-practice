@@ -1,0 +1,16 @@
+/*把背景clip在文字範圍，然後給漸層用animation*/
+:root{
+    --gradient:linear-gradient(15deg,#d72e03,#e9542f,#f5943a,#f6bf48,#fff6a9,#fbcb09,#ffa724,#fba328,#f16507,#ba4100);
+}
+.gra{
+    background-image: var(--gradient);
+    background-size: 300%;
+    -webkit-background-clip: text;
+   color: transparent;
+   animation: bg-gradient 15s infinite alternate;
+}
+
+@keyframes bg-gradient{
+    from{background-position: left;}
+    to{background-position: right;}
+}

@@ -1,0 +1,13 @@
+.image-border{
+    border-block-start: 10px solid;
+    border-inline-start: 9px solid;
+    border-block-end: 8px solid;
+    border-inline-end: 7px solid;
+   border-image-source: linear-gradient(45deg,red,orange,pink );
+   border-image-slice: 1; 
+   animation: bdimg 3s linear infinite alternate;
+   width: fit-content;
+}
+@keyframes bdimg {
+    to{border-image-source: linear-gradient(20deg,pink,rgb(244, 89, 179),rgb(255, 84, 115));}
+}

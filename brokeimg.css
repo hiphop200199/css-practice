@@ -1,0 +1,58 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background: #333;
+}
+.box{
+    position: relative;
+    width: 500px;
+    height: 350px;
+    
+}
+.box span{
+    position: absolute;
+    inset: 0;
+    transition: 0.5s;
+    background: url(./catwanttosleep.png);
+    background-size: cover;
+}
+.box span:nth-child(1){
+    clip-path: polygon(0 0, 50% 0, 50% 50%, 0 50%);
+    /*background: red;*/
+    transition-delay: 0s;
+}
+.box span:nth-child(2){
+    clip-path: polygon(50% 0, 100% 0, 100% 50%, 50% 50%);
+    /*background: orange;*/
+    transition-delay: 0.25s;
+}
+.box span:nth-child(3){
+    clip-path: polygon(0 50%, 50% 50%, 50% 100%, 0 100%);
+    /*background: yellow;*/
+    transition-delay: 0.5s;
+}
+.box span:nth-child(4){
+    clip-path: polygon(50% 50%, 100% 50%, 100% 100%, 50% 100%);
+    /*background: green;*/
+    transition-delay: 0.75s;
+}
+.box:hover span:nth-child(1){
+   transform: translate(-30px,-125px) rotate(-30deg);
+}
+.box:hover span:nth-child(2){
+  transform: translate(30px,-125px) rotate(30deg);
+}
+.box:hover span:nth-child(3){
+   transform: translate(-30px,125px) rotate(30deg);
+}
+.box:hover span:nth-child(4){
+  transform: translate(30px,125px) rotate(-30deg);
+}

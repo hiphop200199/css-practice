@@ -1,0 +1,25 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.tit {
+  color: orange;
+}
+
+p {
+  opacity: 0.5;
+}
+
+.imp {
+  position: relative;
+}
+.imp::after {
+  position: absolute;
+  content: "";
+  left: -1.5em;
+  top: 0;
+  border: 1em solid transparent;
+  border-left-color: red;
+}/*# sourceMappingURL=border-triangle.css.map */

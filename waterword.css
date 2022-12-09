@@ -1,0 +1,38 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+   background: rgb(100, 100, 100);
+}
+.box{
+    position: relative;
+    
+  
+}
+.box h2{
+    position: absolute;
+   transform: translate(-50%,-50%);
+    font-size: 8em;
+    font-family: "Bell MT";
+}
+.box h2:nth-child(1){
+    color: transparent;
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+    text-shadow: 0 0 10px rgb(161, 161, 161);
+}
+.box h2:nth-child(2){
+    color: aqua;
+    animation: wave 10s linear infinite alternate;
+}
+@keyframes wave {
+    0%{clip-path: polygon(0% 72%, 17% 77%, 39% 70%, 58% 77%, 80% 68%, 100% 74%, 99% 99%, 0 100%);}
+    33%{clip-path: polygon(0 51%, 31% 57%, 55% 59%, 73% 57%, 85% 81%, 100% 69%, 99% 99%, 0 100%);}
+    67%{clip-path: polygon(0 73%, 30% 46%, 53% 67%, 71% 32%, 95% 50%, 100% 66%, 99% 99%, 0 100%);}
+    100%{clip-path: polygon(0 29%, 34% 28%, 49% 44%, 80% 20%, 95% 37%, 100% 52%, 99% 99%, 0 100%);}
+}

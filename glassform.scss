@@ -1,0 +1,110 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Gabriola";
+}
+body{
+    overflow: hidden;
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom,rgb(234, 248, 248),rgb(226, 247, 247),rgb(248, 255, 255));
+    .color{
+        position: absolute;
+        filter: blur(200px);
+    }
+    .color:nth-child(1){
+        inset: 100px 350px 40px 120px;
+        width: 600px;
+        height: 600px;
+        background: rgb(253, 145, 192);
+    }
+    .color:nth-child(2){
+        inset: 100px 200px 20px 600px;
+        width: 600px;
+        height: 600px;
+        background: rgb(244, 255, 163);
+    }
+    .color:nth-child(3){
+        inset: -100px 1060px 70px 45px;
+        width: 600px;
+        height: 600px;
+        background: rgb(255, 224, 163);
+    }
+    .box{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .container{
+            position: relative;
+            width: 400px;
+            min-height: 400px;
+            background: rgba($color: #000000, $alpha: 0.025);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 25px 25px rgba(0,0,0,0.15);
+            h2{
+                position: relative;
+                color: #fff;
+                font-weight: 900;
+                font-size: 28px;
+                letter-spacing: 1px;
+                align-self: flex-start;
+                margin: -30px 25px;
+                
+            }
+            .form{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                padding: 20px;
+                padding-bottom: 5px;
+                input{
+                    background: rgba(255, 255, 255, 0.2);
+                    width: 100%;
+                    border: none;
+                    outline: none;
+                    border-radius: 20px;
+                    padding: 5px;
+                    font-size: 20px;
+                    letter-spacing: 1px;
+                    color: #fff;
+                    margin-top: 10px;
+                    margin-bottom: 5px;
+                    box-shadow: rgba($color: #f5f5f5, $alpha: 0.025);
+                    &::placeholder{
+                        color: #fff;
+                    }
+                    &[type="submit"]{
+                        background: #fff;
+                        color: rgba(0, 0, 0, 0.275);
+                        max-width: 100px;
+                        cursor: pointer;
+                        margin-bottom: 20px;
+                        font-weight: 900;
+                    }
+                }
+                p{
+                    color: #fff;
+                    font-size: 18px;
+                    a{
+                        color: #fff;
+                       
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+

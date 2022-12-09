@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            background: #222;
+        }
+        .main{
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+            padding: 10%;
+            flex: 1 1 80%;
+        }
+        .portfolio{
+            display: grid;
+            height: 100%;/*grid-template-area用名字看*/
+            grid-template-columns:repeat(3,1fr) ; /*產生欄位數，grid-column 用span ...寫佔多寬，可以幫線取名字例如:[page-start]1-->*/
+            grid-template-rows: repeat(2,1fr); /*產生排位數，grid-row用span ...寫佔多寬，可以幫線取名字例如:[page-start]1*/
+            gap: 20px;
+        }
+        .portfolio-item{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgb(252, 102, 52);
+            color: rgb(2, 52, 52);
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="portfolio">
+            <div class="portfolio-item">one</div>
+            <div class="portfolio-item">two</div>
+            <div class="portfolio-item">three</div>
+            <div class="portfolio-item">four</div>
+            <div class="portfolio-item">five</div>
+            <div class="portfolio-item">six</div>
+        </div>
+    </div>
+</body>
+</html>

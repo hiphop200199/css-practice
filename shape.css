@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Gabriola";
+}
+
+.container {
+    display: flow-root;
+}
+
+/*float會飄到容器的某一邊*/
+/*要用float搭配shape-outside,shape-margin，容器用display flow root可幫忙清理float*/
+.moon-image {
+    width: 350px;
+    float: right;
+    shape-outside: url(./326356-removebg-preview.png);
+    shape-margin: 10px;
+}

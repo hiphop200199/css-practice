@@ -1,0 +1,48 @@
+*,*::before,*::after{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+.card{
+    width: 400px;
+}
+
+.card-content{
+    text-align: center;
+    position: relative;
+    transition: 3s;
+    padding: 50px;
+    background: rgb(255, 163, 217);
+    transform-style: preserve-3d;
+}
+.card:hover .card-content{
+    transform: rotateY(180deg);
+}
+.card-front,.card-back{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    backface-visibility: hidden;   /*決定背面的東西能不能在前面時讓人看到*/
+    transform-style: preserve-3d; /*讓小孩保有3d效果*/
+}
+.card-title{
+    font-size: 30px;
+    transform: translateZ(6rem);
+}
+.card-subtitle{
+    transform: translateZ(4rem);
+}
+.card-body{
+    transform: translateZ(2rem);
+}
+.card-back{
+   padding: 30px;
+    transform: rotateY(180deg);
+    background: rgb(144, 249, 255);
+}

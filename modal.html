@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      :modal {
+        background-color: aqua;
+      }
+      /*backdrop設背後*/
+      :modal::backdrop {
+        background-color: rgba(255, 228, 196, 0.644);
+      }
+    </style>
+    <title>modal</title>
+  </head>
+  <body>
+    <button class="open">open</button>
+    <dialog class="modal">
+      <h2>Lorem, ipsum dolor.</h2>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <button class="close">close</button>
+      <!--<form method="dialog">
+        <input type="text" placeholder="feedback..." />
+        <input type="submit" value="submit" />
+      </form>--><!--也可以用form的提交關閉modal-->
+    </dialog>
+    <script>
+      let modal = document.querySelector(".modal");
+      let btnOpen = document.querySelector(".open");
+      let btnClose = document.querySelector(".close");
+      btnOpen.addEventListener("click", () => {
+        modal.showModal();
+      }); //開modal跟show差在能不能跟背後元素互動
+      btnClose.addEventListener("click", () => {
+        modal.close();
+      }); //關modal
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <!--設定color-scheme-->
+    <style>
+      :root {
+        color-scheme: light dark;
+      }
+      /*可以分別設元素的color-scheme*/
+      h3 {
+        color-scheme: dark;
+      }
+      @media (prefer-color-scheme: dark) {
+        h1 {
+          color: bisque;
+        }
+      }
+    </style>
+    <title>color-scheme</title>
+  </head>
+  <body>
+    <button id="btn-tgl">○</button>
+    <h1>Lorem ipsum dolor sit.</h1>
+    <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis
+      pariatur optio error a. Repellendus molestias saepe dolor quas cum unde!
+    </p>
+    <script src=""></script>
+  </body>
+</html>

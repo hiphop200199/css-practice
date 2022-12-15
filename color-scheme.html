@@ -9,15 +9,38 @@
     <style>
       :root {
         color-scheme: light dark;
+        --clr-bg: rgb(255, 243, 187);
+        --clr-h1-h3-p: #124;
+      }
+      body {
+        background-color: var(--clr-bg);
+      }
+      button {
+        background-color: transparent;
+        border-color: var(--clr-h1-h3-p);
+        color: var(--clr-h1-h3-p);
+        border-radius: 100vmax;
       }
       /*可以分別設元素的color-scheme*/
       h3 {
-        color-scheme: dark;
+        /*color-scheme: dark;*/
+        color: var(--clr-h1-h3-p);
       }
-      @media (prefer-color-scheme: dark) {
+      h1 {
+        /*color-scheme: dark;*/
+        color: var(--clr-h1-h3-p);
+      }
+      p {
+        color: var(--clr-h1-h3-p);
+      }
+      /*@media (prefer-color-scheme: dark) {
         h1 {
-          color: bisque;
+          color: var(--clr-h1-h3-p);
         }
+      }*/
+      .darkmode {
+        --clr-bg: #124;
+        --clr-h1-h3-p: rgb(255, 248, 168);
       }
     </style>
     <title>color-scheme</title>
@@ -30,6 +53,6 @@
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis
       pariatur optio error a. Repellendus molestias saepe dolor quas cum unde!
     </p>
-    <script src=""></script>
+    <script src="./color-scheme.js"></script>
   </body>
 </html>

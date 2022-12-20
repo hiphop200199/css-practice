@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        display: grid;
+        place-content: center;
+        min-height: 100vh;
+      }
+      h1 {
+        position: relative;
+        width: max-content;
+      }
+      /*偽元素要弄*/
+      h1::before,
+      h1::after {
+        position: absolute;
+        content: "";
+        inset: 0;
+      }
+      h1::before {
+        background-color: white;
+        animation: typewriter 4s steps(22) 1s forwards; /*step重要，做好動畫間隔*/
+      }
+      h1::after {
+        width: 0.125em; /*因應不同字元調整寬度*/
+        background-color: black;
+        animation: typewriter 4s steps(22) 1s forwards,
+          blink 750ms steps(22) 1s infinite;
+      }
+      @keyframes typewriter {
+        to {
+          left: 100%;
+        }
+      }
+      @keyframes blink {
+        to {
+          background: transparent;
+        }
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>this is a pen!oh,yeah!</h1>
+  </body>
+</html>

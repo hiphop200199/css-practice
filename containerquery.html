@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /*container縮寫:名字/type*/
+      /*container-type的inline-size看寬度，block-size看高度*/
+      /*container-name定義名字後，可以單獨寫@container 名字 的條件*/
+      /*container query,media query差在，前者看container大小，後者看可視範圍大小*/
+      /*media query有range新寫法ex:(width > 700px)*/
+      body {
+        background-color: #222;
+      }
+      .container {
+        container-type: inline-size;
+        margin: 3vmax auto;
+        width: auto;
+        border: 1px solid rgb(255, 255, 255);
+        color: aliceblue;
+        padding: 1vmax;
+      }
+      .container p {
+        background-color: aqua;
+      }
+      .container[data-type="small"] {
+        max-width: 300px;
+      }
+      .container[data-type="medium"] {
+        max-width: 600px;
+      }
+      .container[data-type="large"] {
+        max-width: 1000px;
+      }
+      @container (min-width: 625px) {
+        .container p {
+          background-color: red;
+        }
+      }
+      @container (min-width: 925px) {
+        .container p {
+          background-color: lime;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!--自定義html標籤前綴是data-...-->
+    <!--要用container query要先建container的class-->
+    <div class="container" data-type="small">
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <div class="container" data-type="medium">
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <div class="container" data-type="large">
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+  </body>
+</html>

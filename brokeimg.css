@@ -10,6 +10,7 @@ body{
     width: 100%;
     min-height: 100vh;
     background: #333;
+    overflow: hidden;
 }
 .box{
     position: relative;
@@ -21,7 +22,7 @@ body{
     position: absolute;
     inset: 0;
     transition: 0.5s;
-    background: url(./catwanttosleep.png);
+    background: url(./movie-2270554_1280.webp);
     background-size: cover;
 }
 .box span:nth-child(1){

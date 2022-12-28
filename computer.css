@@ -1,3 +1,34 @@
+/*使用class時的關鍵字:
+1.整台電腦:computer
+2.電腦螢幕:screen
+3.螢幕上方呈現字的地方:screen-up
+4.喇叭:speaker
+5.喇叭裡的大圓圈:circle
+6.喇叭裡的小圓圈:incircle
+7.螢幕支架:neck
+8.鍵盤組:keyboards
+9.單一鍵盤:keyboard
+*/
+/*鍵盤數量是60個!，因為我在鍵盤組中用grid切割了60個空格*/
+/*動畫列在最下面*/
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: rgb(255, 238, 5);
+  background-color: #111;
+}
+body {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+}
+body .web-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
 body .web-container .computer {
     position: relative;
     perspective: 100px;
@@ -91,4 +122,138 @@ body .web-container .computer {
   }
   body .web-container .computer .keyboards .keyboard:last-child {
     border-radius: 0 0 1vmax;
+  }
+
+/*螢幕小於768px時，呈現的外表*/
+  @media screen and (width < 768px) {
+    body {
+      position: relative;
+      width: 100vw;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+    body .web-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+    body .web-container .computer {
+      position: relative;
+      perspective: 100px;
+      left: 27.5vw;
+      top: 32.5vh;
+      width: 45vw;
+      height: 35vh;
+      background-color: transparent;
+    }
+    body .web-container .computer .speaker {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 60%;
+      left: 0%;
+      width: 5vw;
+      height: 8vh;
+      border-radius: 5px;
+      border: 2px solid rgb(255, 238, 5);
+    }
+    body .web-container .computer .speaker .circle, body .web-container .computer .speaker .circle .incircle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 2.5vmax;
+      height: 2.5vmax;
+      border-radius: 50%;
+      border: 2px solid rgb(255, 238, 5);
+    }
+    body .web-container .computer .speaker .circle .incircle {
+      width: 50%;
+      height: 50%;
+    }
+    body .web-container .computer .speaker:last-child {
+      left: 89%;
+    }
+    body .web-container .computer .screen, body .web-container .computer .screen .screen-up {
+      left: 5%;
+      width: 90%;
+      height: 55%;
+      border-radius: 1vmax;
+      position: absolute;
+      background-color: transparent;
+      border: 2px solid rgb(255, 238, 5);
+    }
+    body .web-container .computer .screen .screen-up, body .web-container .computer .screen .screen-up .screen-up {
+      left: 0;
+      width: 100%;
+      height: 80%;
+      -webkit-border-before: none;
+              border-block-start: none;
+      -webkit-border-start: none;
+              border-inline-start: none;
+      -webkit-border-end: none;
+              border-inline-end: none;
+    }
+    body .web-container .computer .neck {
+      width: 30%;
+      height: 13%;
+      left: 35%;
+      top: 55%;
+      position: absolute;
+      background-color: rgb(255, 238, 5);
+      -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+              clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+      border-radius: 0 0 1.5vmax 1.5vmax;
+    }
+    body .web-container .computer .keyboards {
+      display: grid;
+      grid-template-columns: repeat(10, 10%);
+      grid-template-rows: repeat(6);
+      width: 65%;
+      height: 18%;
+      left: 17.5%;
+      top: 75%;
+      position: absolute;
+      perspective: 250px;
+      border-radius: 1vmax;
+      border: 1px solid rgb(255, 238, 5);
+      transform: rotateX(50deg);
+    }
+    body .web-container .computer .keyboards .keyboard {
+      border: 1px solid rgb(255, 238, 5);
+    }
+    body .web-container .computer .keyboards .keyboard:first-child {
+      border-radius: 1vmax 0 0 0;
+    }
+    body .web-container .computer .keyboards .keyboard:nth-child(10) {
+      border-radius: 0 1vmax 0 0;
+    }
+    body .web-container .computer .keyboards .keyboard:nth-child(51) {
+      border-radius: 0 0 0 1vmax;
+    }
+    body .web-container .computer .keyboards .keyboard:last-child {
+      border-radius: 0 0 1vmax;
+    }
+    
+  }
+
+  /*更改顏色動畫列表*/
+
+  /*更改文字顏色*/
+  @keyframes clr {
+    to {
+      color: rgb(168, 255, 5);
+    }
+  }
+  /*更改邊框顏色*/
+  @keyframes clrbdr {
+    to {
+      border-color: rgb(168, 255, 5);
+    }
+  }
+  /*更改背景顏色*/
+  @keyframes clrbg {
+    to {
+      background-color: rgb(168, 255, 5);
+    }
   }

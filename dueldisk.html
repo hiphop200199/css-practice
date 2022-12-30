@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .canva {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #001;
+        width: 100%;
+        min-height: 100vh;
+      }
+      .circle-most-outside {
+        width: 5vmax;
+        height: 5vmax;
+        border-radius: 50%;
+        background-color: aliceblue;
+      }
+      .cards {
+        width: 1.5vmax;
+        height: 1vmax;
+        border-radius: 1px;
+        border: 1px solid brown;
+      }
+      .bar {
+        width: 4vmax;
+        height: 1vmax;
+        border: 1px solid pink;
+      }
+      .bar-triangle {
+        width: 1vmax;
+        height: 1.2vmax;
+        background-color: coral;
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      }
+      .circle-2nd {
+        width: 4vmax;
+        height: 4vmax;
+        border-radius: 50%;
+        background-color: aliceblue;
+        border: 1px solid #001;
+      }
+      .circle-3rd {
+        width: 2vmax;
+        height: 2vmax;
+        border-radius: 50%;
+        border: 1px solid red;
+      }
+      .circle-4th {
+        width: 2vmax;
+        height: 2vmax;
+        border-radius: 50%;
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="canva">
+      <div class="circle-most-outside">
+        <div class="cards">
+          <div class="circle-in-cards"></div>
+        </div>
+        <div class="bar">
+          <div class="bar-triangle"></div>
+        </div>
+        <div class="circle-2nd"></div>
+        <div class="circle-3rd"></div>
+        <div class="circle-4th"></div>
+      </div>
+      <div class="plate"></div>
+    </div>
+  </body>
+</html>

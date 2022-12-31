@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #box {
+        width: 500px;
+        height: 300px;
+        border: 5px solid coral;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <!--可以降落的機場，要ondrop跟ondragover-->
+    <img
+      id="pic"
+      src="catwanttosleep.png"
+      alt=""
+      draggable="true"
+      ondragstart="drag(event)"
+      width="200"
+      height="180"
+    /><!--飛機可以飛，要有draggable,ondragstart，飛機跟機場用飛機編號(id)聯絡~-->
+    <script>
+      let box = document.getElementById("box");
+      let pic = document.getElementById("pic");
+      let body = document.body;
+      function drag(event) {
+        event.dataTransfer.setData("text", event.target.id);
+      }
+      //元素預設不能拖拉到別的元素上
+      function drop(event) {
+        event.preventDefault();
+        let data = event.dataTransfer.getData("text");
+        event.target.appendChild(document.getElementById(data));
+        event.target.style.backgroundColor = "orange";
+        body.style.backgroundColor = "green";
+        document.getElementById(data).style.position = "absolute";
+        document.getElementById(data).style.left = "150px";
+        document.getElementById(data).style.top = "60px";
+      }
+      function allowDrop(event) {
+        event.preventDefault();
+      }
+    </script>
+  </body>
+</html>

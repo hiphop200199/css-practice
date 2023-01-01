@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    以x克x為範例，如何在一個盒子範圍把超過範圍的文字省略掉(skip...) h4 style:
+    <span>margin: 8px 0; </span>
+    <span>line-height: 18px;</span>
+    <span> height: 23px;</span>
+    <span>display: -webkit-box;</span>
+    <span>-webkit-line-clamp: 2;</span>
+    <span>-webkit-box-orient: vertical;</span>
+    <span>overflow: hidden;</span>
+    <span> word-break: break-all;</span>
+    <span
+      >-webkit-line-clamp可以選在第幾行把超出範圍的字隱藏掉 一定要搭配:↓</span
+    >
+    <span> display: -webkit-box;(但這個其實就是flexbox)</span>
+    <span>-webkit-box-orient: vertical; 讓容器裡的元素用橫向或直向排列</span>
+    <h4>
+      <a></a>
+    </h4>
+  </body>
+</html>

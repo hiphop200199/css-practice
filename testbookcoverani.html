@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        min-height: 100vh;
+        overflow: hidden;
+        background-color: #111;
+        perspective: 250px;
+      }
+
+      :hover .a {
+        transform: rotateY(-0.5turn);
+        left: -20%;
+      }
+
+      .a {
+        left: 30%;
+        top: 20%;
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        background-color: rgb(237, 104, 15);
+        z-index: 1;
+        transition: 2s;
+      }
+
+      .b {
+        left: 30%;
+        top: 20%;
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        background-color: rgb(244, 224, 51);
+        transition: 2s;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>
+      perspective加在母元素，transform-style加在母元素(一定要搭配transform)
+    </h3>
+    <div class="a"></div>
+    <div class="b">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem natus quo
+      neque labore quis quae distinctio odit delectus non qui. neque labore quis
+      quae distinctio odit delectus non qui.neque labore quis quae distinctio
+      odit delectus non qui.neque labore quis quae distinctio odit delectus non
+      qui.neque labore quis quae distinctio odit delectus non qui.neque labore
+      quis quae distinctio odit delectus non qui.
+    </div>
+  </body>
+</html>

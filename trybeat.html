@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: grid;
+        place-items: center;
+        background-color: #111;
+        min-height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+      }
+      .beat {
+        background-color: yellow;
+        width: 5vmax;
+        height: 5vmax;
+        border-radius: 100vmax;
+        box-shadow: 0 0 0 3px red, 0 0 0 6px yellow;
+        animation: beat 2.6s; /*時間呢，就是1分鐘除以那首歌的bpm再乘以4，就是4拍的時間--->(calc(60/bpm*4))*/
+      }
+      @keyframes beat {
+        12.5% {
+          scale: 1.5;
+        }
+        25% {
+          scale: 1.2;
+        }
+        37.5%,
+        62.5%,
+        82.5% {
+          scale: 1.3;
+        }
+        50%,
+        75% {
+          scale: 1.1;
+        }
+        100% {
+          scale: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="beat">!</div>
+  </body>
+</html>

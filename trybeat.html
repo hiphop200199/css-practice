@@ -7,8 +7,7 @@
     <title>Document</title>
     <style>
       body {
-        display: grid;
-        place-items: center;
+        position: relative;
         background-color: #111;
         min-height: 100vh;
         width: 100vw;
@@ -18,6 +17,9 @@
         animation: bgbeat 2s infinite;
       }
       .beat {
+        position: absolute;
+        left: 22%;
+        top: 20%;
         background-color: yellow;
         outline-offset: 6px;
         outline: 3px solid yellow;
@@ -25,9 +27,9 @@
         height: 5vmax;
         border-radius: 100vmax;
 
-        animation: beat 2s infinite, rot linear 6s infinite; /*時間呢，就是1分鐘除以那首歌的bpm再乘以4，就是4拍的時間--->(calc(60/bpm*4))*/
+        animation: beat 2s infinite, mv 2s linear infinite; /*時間呢，就是1分鐘除以那首歌的bpm再乘以4，就是4拍的時間--->(calc(60/bpm*4))*/
       }
-      @keyframes beat {
+      /*@keyframes beat {
         12.5%,
         37.5%,
         62.5%,
@@ -40,10 +42,30 @@
         100% {
           scale: 1;
         }
-      }
-      @keyframes rot {
-        to {
-          transform: rotateY(-1turn);
+      }*/
+      @keyframes mv {
+        12.5% {
+          transform: translate(0, 0);
+          outline-color: rgb(124, 235, 255);
+          background-color: rgb(124, 235, 255);
+        }
+        37.5% {
+          transform: translate(45vw, 0);
+          background-color: yellow;
+
+          outline: 3px solid yellow;
+        }
+        62.5% {
+          transform: translate(0, 50vh);
+          background-color: yellow;
+
+          outline: 3px solid yellow;
+        }
+        82.5% {
+          transform: translate(45vw, 50vh);
+          background-color: yellow;
+
+          outline: 3px solid yellow;
         }
       }
       @keyframes bgbeat {

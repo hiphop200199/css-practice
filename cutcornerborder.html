@@ -11,15 +11,50 @@
         min-height: 100vh;
       }
       button {
-        --background-color: white;
+        --background-color: rgb(205, 205, 205);
         --border-color: linear-gradient(to bottom right, red, blue);
         --border-width: 0.5em;
         --edge-size: 0.5em;
         display: inline-grid;
         padding: 0.5em 1.5em;
         border: 0;
-        background: var(--background-color);
-        /*重點在clip path,pseudo element,isolation*/
+        /*background: var(--background-color);*/
+        isolation: isolate;
+        clip-path: polygon(
+          10% 0,
+          0 15%,
+          0 100%,
+          0% 100%,
+          90% 100%,
+          100% 85%,
+          100% 0%,
+          100% 0
+        );
+        /*重點在clip path,pseudo element,isolation，用after蓋在before上面，露出來的before做成框框的感覺*/
+      }
+      button::after,
+      button::before {
+        position: absolute;
+        content: "";
+        inset: 0;
+      }
+      button::before {
+        z-index: -2;
+        background-image: var(--border-color);
+      }
+      button::after {
+        background-color: var(--background-color);
+        z-index: -1;
+        clip-path: polygon(
+          19% 19%,
+          0 27%,
+          0 84%,
+          0 82%,
+          86% 83%,
+          100% 71%,
+          100% 18%,
+          100% 18%
+        );
       }
     </style>
     <title>Document</title>

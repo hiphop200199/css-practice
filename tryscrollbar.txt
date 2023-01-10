@@ -1,0 +1,7 @@
+::-webkit-scrollbar{width:寬度}
+
+::-webkit-scrollbar-track卷軸軌道顏色
+
+::-webkit-scrollbar-thumb當下正在看的卷軸範圍
+
+前面可以+class前綴去針對目標做樣式

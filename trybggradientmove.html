@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: grid;
+        place-items: center;
+        /*寬的預設值就是100%螢幕寬*/
+
+        min-height: 100vh;
+      }
+      div {
+        width: 100%;
+        height: 100%;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        /*漸層顏色後面的數值(%(相對)還是px(絕對)表示在漸層軸上，到了什麼位置，就銜接什麼顏色，沒寫就電腦平均分配)*/
+        background-image: repeating-radial-gradient(
+          circle,
+          rgb(0, 255, 217),
+          rgb(169, 26, 81) 5%,
+          yellow 10%,
+          green 15%,
+          blue 20%,
+          navy 25%,
+          purple 30%
+        );
+        animation: big 20s linear alternate infinite;
+      }
+      /*動畫動什麼屬性，基本屬性就要相對的有*/
+      @keyframes big {
+        50% {
+          background-size: 500%;
+          background-position: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>

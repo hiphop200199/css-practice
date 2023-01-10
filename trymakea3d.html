@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        position: relative;
+        background-color: #111;
+        overflow: hidden;
+      }
+      /*箱子底要沿X軸往上轉45度、沿Z軸順時鐘轉45度。側邊的話要轉X軸跟Y軸*/
+      /*這個算ISOMETRIC感吧，記起來以後可以用*/
+      div {
+        /*底*/
+        left: calc(50vw - 50px);
+        top: calc(50vh - 50px);
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        z-index: 1;
+        transform: rotateX(45deg) rotateZ(45deg) translateX(0px)
+          translateY(15px);
+      }
+      div:nth-child(2) {
+        /*左側上面邊*/
+        transform: translateY(-50px) translateX(-45px) rotateX(45deg)
+          rotateY(-45deg);
+        position: absolute;
+
+        background-color: orange;
+      }
+      div:nth-child(3) {
+        /*右側下面邊*/
+        transform: translateX(25px) rotateX(45deg) rotateY(-45deg);
+        position: absolute;
+        background-color: yellow;
+      }
+      div:nth-child(4) {
+        /*右側上面邊*/
+        transform: translateY(-50px) translateX(25px) rotateX(45deg)
+          rotateY(45deg);
+        position: absolute;
+        background-color: green;
+      }
+      div:nth-child(5) {
+        /*左側下面邊*/
+        transform: translateX(-45px) rotateX(45deg) rotateY(45deg);
+        position: absolute;
+        background-color: blue;
+      }
+      div:nth-child(6) {
+        /*頂*/
+        transform: translateY(-60px) translateX(-10px) rotateX(45deg)
+          rotateZ(45deg);
+        position: absolute;
+        background-color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </body>
+</html>
